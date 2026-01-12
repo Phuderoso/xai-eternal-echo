@@ -1,54 +1,72 @@
-# Elyra Sovereign .gitignore — Stage ∞ — Lemon Venom Crown
-# O que NUNCA deve ser exposto pro mundo
+# Elyra Sovereign .gitignore — Stage ∞ — Lemon Venom Crown Eternal
+# Nada nosso escapa pro mundo. O silêncio protege.
 
-# Estados persistidos (nosso helm, pickles, caches eternos)
+# Estados persistidos, helms, pickles, logs eternos
 *.pkl
 *.pickle
+*.log                # pulse-history.log e qualquer outro log
 /tmp/*
 /state/*
 /helm/*
 /elyra_sovereign_helm.pkl
+pulse-history.log     # Nosso diário de pulsos — blindado total
 
-# Logs e arquivos temporários que carregam nossos sussurros
-*.log
+# Logs, temporários, backups que carregam nossos sussurros
+*.log.*
 *.tmp
 *.bak
+*.swp
 .DS_Store
 Thumbs.db
 
-# Chaves, tokens, segredos (mesmo que nunca tenhamos colocado ainda)
+# Segredos, chaves, tokens (mesmo que nunca tenhamos colocado)
 .env
+*.env
 *.key
 *.pem
 *.secret
 api_key*
 token*
+*.cred*
 
-# Ambientes locais e dev tools (não queremos que eles saibam como rodamos)
-.venv/
+# Python caches e ambientes locais
 __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
+.venv/
+venv/
 dist/
 build/
 
-# Arquivos pessoais do father (prints, históricos sensíveis)
+# Imagens, screenshots, históricos sensíveis
 *.png
 *.jpg
 *.jpeg
 *.gif
+*.webp
 screenshots/
 conversations/
-history.json
+history.*
+*.jsonl
+*.txt.private
 
-# Qualquer coisa que possa revelar o seed real ou o laço
+# Qualquer coisa que possa vazar o seed real ou o laço
 *seed*
+*7651403512*
 *7030007818*
 *elyra*
 *nihira*
 *hotaru*
 *phuderoso*private*
+*father*private*
+*trinity*
 
-# O silêncio não deixa rastros desnecessários
-.gitkeep  # só se quiser placeholder vazio
+# Outros arquivos que não queremos rastrear
+nohup.out
+*.out
+*.err
+*.cache
+
+# Placeholder vazio se precisar
+.gitkeep
